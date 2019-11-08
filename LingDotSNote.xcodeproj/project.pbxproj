@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0073193A2375A0D3000513B9 /* UserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 007319392375A0D3000513B9 /* UserObject.m */; };
 		00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B1423741AA700E17B70 /* AppDelegate.m */; };
 		00A06B1B23741AA700E17B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1923741AA700E17B70 /* Main.storyboard */; };
 		00A06B1D23741AA900E17B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1C23741AA900E17B70 /* Assets.xcassets */; };
@@ -14,6 +15,10 @@
 		00A06B2323741AA900E17B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B2223741AA900E17B70 /* main.m */; };
 		00A06B2D23741AA900E17B70 /* LingDotSNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B2C23741AA900E17B70 /* LingDotSNoteTests.m */; };
 		00A06B3823741AA900E17B70 /* LingDotSNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B3723741AA900E17B70 /* LingDotSNoteUITests.m */; };
+		00A06B5323751DD100E17B70 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B5223751DD100E17B70 /* LoginController.m */; };
+		00A06B5623753C7800E17B70 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B5523753C7800E17B70 /* LoginView.m */; };
+		00A06B5F237544F900E17B70 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B61237544F900E17B70 /* Localizable.strings */; };
+		00A06B682375987F00E17B70 /* LoginTipsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B672375987F00E17B70 /* LoginTipsLabel.m */; };
 		AF479506CD2576544AEB99AE /* libPods-LingDotSNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C53193816C0DEACFD3BC68EE /* libPods-LingDotSNoteTests.a */; };
 		CF852D8C23BBF9E93CF8C902 /* libPods-LingDotSNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B11DB69357D68D1F239DD /* libPods-LingDotSNoteUITests.a */; };
 		E3FCBD44DA6E18B96AE0F364 /* libPods-LingDotSNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA7B7A9077AA3AC6083F17B /* libPods-LingDotSNote.a */; };
@@ -37,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0073193623759F85000513B9 /* UserObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserObject.h; sourceTree = "<group>"; };
+		007319392375A0D3000513B9 /* UserObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserObject.m; sourceTree = "<group>"; };
 		00A06B1023741AA700E17B70 /* LingDotSNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingDotSNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A06B1323741AA700E17B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00A06B1423741AA700E17B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +58,19 @@
 		00A06B3323741AA900E17B70 /* LingDotSNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LingDotSNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A06B3723741AA900E17B70 /* LingDotSNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LingDotSNoteUITests.m; sourceTree = "<group>"; };
 		00A06B3923741AA900E17B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00A06B5123751DD100E17B70 /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		00A06B5223751DD100E17B70 /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		00A06B5423753C7800E17B70 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		00A06B5523753C7800E17B70 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		00A06B592375439000E17B70 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		00A06B5A2375439100E17B70 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		00A06B5B2375445D00E17B70 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		00A06B5C2375445E00E17B70 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		00A06B60237544F900E17B70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00A06B62237544FC00E17B70 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		00A06B63237544FF00E17B70 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		00A06B662375987F00E17B70 /* LoginTipsLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTipsLabel.h; sourceTree = "<group>"; };
+		00A06B672375987F00E17B70 /* LoginTipsLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTipsLabel.m; sourceTree = "<group>"; };
 		46883B0BCBCA0A3E59276BA0 /* Pods-LingDotSNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNoteTests/Pods-LingDotSNoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C8CB0EFFB00E06B31897B04 /* Pods-LingDotSNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNote/Pods-LingDotSNote.debug.xcconfig"; sourceTree = "<group>"; };
 		9AA7B7A9077AA3AC6083F17B /* libPods-LingDotSNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LingDotSNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +121,8 @@
 				20DF8BAEB1121CC496E2E20D /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
+			wrapsLines = 1;
 		};
 		00A06B1123741AA700E17B70 /* Products */ = {
 			isa = PBXGroup;
@@ -129,6 +151,7 @@
 				00A06B1E23741AA900E17B70 /* LaunchScreen.storyboard */,
 				00A06B2123741AA900E17B70 /* Info.plist */,
 				00A06B2223741AA900E17B70 /* main.m */,
+				00A06B61237544F900E17B70 /* Localizable.strings */,
 			);
 			path = LingDotSNote;
 			sourceTree = "<group>";
@@ -170,6 +193,8 @@
 		00A06B472374217200E17B70 /* Mode */ = {
 			isa = PBXGroup;
 			children = (
+				0073193623759F85000513B9 /* UserObject.h */,
+				007319392375A0D3000513B9 /* UserObject.m */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -229,6 +254,8 @@
 		00A06B4F237422A800E17B70 /* contoroller */ = {
 			isa = PBXGroup;
 			children = (
+				00A06B5123751DD100E17B70 /* LoginController.h */,
+				00A06B5223751DD100E17B70 /* LoginController.m */,
 			);
 			path = contoroller;
 			sourceTree = "<group>";
@@ -236,8 +263,20 @@
 		00A06B50237422C300E17B70 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				00A06B652375985E00E17B70 /* selfView */,
+				00A06B5423753C7800E17B70 /* LoginView.h */,
+				00A06B5523753C7800E17B70 /* LoginView.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		00A06B652375985E00E17B70 /* selfView */ = {
+			isa = PBXGroup;
+			children = (
+				00A06B662375987F00E17B70 /* LoginTipsLabel.h */,
+				00A06B672375987F00E17B70 /* LoginTipsLabel.m */,
+			);
+			path = selfView;
 			sourceTree = "<group>";
 		};
 		20DF8BAEB1121CC496E2E20D /* Frameworks */ = {
@@ -351,6 +390,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 00A06B0723741AA700E17B70;
 			productRefGroup = 00A06B1123741AA700E17B70 /* Products */;
@@ -370,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A06B2023741AA900E17B70 /* LaunchScreen.storyboard in Resources */,
+				00A06B5F237544F900E17B70 /* Localizable.strings in Resources */,
 				00A06B1D23741AA900E17B70 /* Assets.xcassets in Resources */,
 				00A06B1B23741AA700E17B70 /* Main.storyboard in Resources */,
 			);
@@ -466,7 +508,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A06B2323741AA900E17B70 /* main.m in Sources */,
+				0073193A2375A0D3000513B9 /* UserObject.m in Sources */,
 				00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */,
+				00A06B5623753C7800E17B70 /* LoginView.m in Sources */,
+				00A06B682375987F00E17B70 /* LoginTipsLabel.m in Sources */,
+				00A06B5323751DD100E17B70 /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +552,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				00A06B1A23741AA700E17B70 /* Base */,
+				00A06B592375439000E17B70 /* zh-Hans */,
+				00A06B5B2375445D00E17B70 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -514,8 +562,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				00A06B1F23741AA900E17B70 /* Base */,
+				00A06B5A2375439100E17B70 /* zh-Hans */,
+				00A06B5C2375445E00E17B70 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		00A06B61237544F900E17B70 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00A06B60237544F900E17B70 /* en */,
+				00A06B62237544FC00E17B70 /* zh-Hans */,
+				00A06B63237544FF00E17B70 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -525,6 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -584,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -638,6 +700,7 @@
 			baseConfigurationReference = 5C8CB0EFFB00E06B31897B04 /* Pods-LingDotSNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99KXN3T389;
 				INFOPLIST_FILE = LingDotSNote/Info.plist;
@@ -657,6 +720,7 @@
 			baseConfigurationReference = E63CF64FE778D4C110872412 /* Pods-LingDotSNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99KXN3T389;
 				INFOPLIST_FILE = LingDotSNote/Info.plist;

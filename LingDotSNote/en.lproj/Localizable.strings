@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  LingDotSNote
+
+  Created by Tom-Li on 2019/11/8.
+  Copyright © 2019 Dong&Ling. All rights reserved.
+*/
+
+LV_name_tips_view = "Your name:";
+LV_password_tips_view = "Password:";
+
+LV_name_placehoder_view = "Enter your login name";
+LV_password_placeholder_view = "Enter your password";
+
+LV_btn_sign_up = "SIGN UP";// register
+LV_btn_sing_in = "SIGN IN";// signin
+

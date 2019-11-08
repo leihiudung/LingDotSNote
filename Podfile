@@ -7,6 +7,7 @@ target 'LingDotSNote' do
 
   # Pods for LingDotSNote
   pod 'AFNetworking', '~> 3.0'
+  pod 'Masonry'
   target 'LingDotSNoteTests' do
     inherit! :search_paths
     # Pods for testing
