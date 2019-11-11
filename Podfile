@@ -8,6 +8,7 @@ target 'LingDotSNote' do
   # Pods for LingDotSNote
   pod 'AFNetworking', '~> 3.0'
   pod 'Masonry'
+  pod 'ReactiveObjC', '~> 3.1.0'
   target 'LingDotSNoteTests' do
     inherit! :search_paths
     # Pods for testing

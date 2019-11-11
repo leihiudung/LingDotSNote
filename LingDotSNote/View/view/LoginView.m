@@ -7,18 +7,10 @@
 //
 
 #import "LoginView.h"
-#import "LoginTipsLabel.h"
 #import <Masonry.h>
 
 @interface LoginView()
-@property (nonatomic, strong) LoginTipsLabel *nameTipsView;
-@property (nonatomic, strong) UILabel *passwordTipsView;
 
-@property (nonatomic, strong) UITextField *nameView;
-@property (nonatomic, strong) UITextField *passwordView;
-
-@property (nonatomic, strong) UIButton *signinBtn;
-@property (nonatomic, strong) UIButton *signupBtn;
 
 @end
 
@@ -61,11 +53,14 @@
     [self addSubview:self.nameView];
     [self addSubview:self.passwordView];
     
-    self.signinBtn = [[UIButton alloc]init];
     self.signupBtn = [[UIButton alloc]init];
+    self.signinBtn = [[UIButton alloc]init];
+    [self.signupBtn addTarget:self action:@selector(signupAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.signinBtn addTarget:self action:@selector(signinAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self addSubview:self.signinBtn];
     [self addSubview:self.signupBtn];
+    [self addSubview:self.signinBtn];
+    [self.signinBtn setEnabled:NO];
     
     [self initConstraint];
     [self initContent];
@@ -132,6 +127,7 @@
     
     [self.signupBtn setBackgroundColor:[UIColor redColor]];
     [self.signinBtn setBackgroundColor:[UIColor colorWithRed:123/255.0 green:104/255.0 blue:238/255.0 alpha:1]];
+//    [self.signinBtn ];
     
     CALayer *signupLayer = self.signupBtn.layer;
     signupLayer.cornerRadius = 16;
@@ -154,6 +150,17 @@
     return self.signinBtn;
 }
 
+- (void)signupAction:(id)sender {
+    
+}
 
+- (void)signinAction:(id)sender {
+    
+}
+
+- (void)resignFoucs {
+    [self.nameView resignFirstResponder];
+    [self.passwordView resignFirstResponder];
+}
 
 @end

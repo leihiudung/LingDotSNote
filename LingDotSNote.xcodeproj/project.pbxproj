@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0073193A2375A0D3000513B9 /* UserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 007319392375A0D3000513B9 /* UserObject.m */; };
+		0073193D23794F89000513B9 /* HallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073193C23794F89000513B9 /* HallViewController.m */; };
+		0073194023795026000513B9 /* HallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073193F23795026000513B9 /* HallView.m */; };
+		0073194423796480000513B9 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073194323796480000513B9 /* NoteViewController.m */; };
+		0073194723796C74000513B9 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073194623796C74000513B9 /* PersonalViewController.m */; };
 		00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B1423741AA700E17B70 /* AppDelegate.m */; };
 		00A06B1B23741AA700E17B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1923741AA700E17B70 /* Main.storyboard */; };
 		00A06B1D23741AA900E17B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1C23741AA900E17B70 /* Assets.xcassets */; };
@@ -44,6 +48,14 @@
 /* Begin PBXFileReference section */
 		0073193623759F85000513B9 /* UserObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserObject.h; sourceTree = "<group>"; };
 		007319392375A0D3000513B9 /* UserObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserObject.m; sourceTree = "<group>"; };
+		0073193B23794F89000513B9 /* HallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HallViewController.h; sourceTree = "<group>"; };
+		0073193C23794F89000513B9 /* HallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HallViewController.m; sourceTree = "<group>"; };
+		0073193E23795026000513B9 /* HallView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HallView.h; sourceTree = "<group>"; };
+		0073193F23795026000513B9 /* HallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HallView.m; sourceTree = "<group>"; };
+		0073194223796480000513B9 /* NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		0073194323796480000513B9 /* NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		0073194523796C74000513B9 /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		0073194623796C74000513B9 /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		00A06B1023741AA700E17B70 /* LingDotSNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingDotSNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A06B1323741AA700E17B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00A06B1423741AA700E17B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,6 +122,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0073194123796230000513B9 /* HallViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0073193B23794F89000513B9 /* HallViewController.h */,
+				0073193C23794F89000513B9 /* HallViewController.m */,
+				0073194223796480000513B9 /* NoteViewController.h */,
+				0073194323796480000513B9 /* NoteViewController.m */,
+				0073194523796C74000513B9 /* PersonalViewController.h */,
+				0073194623796C74000513B9 /* PersonalViewController.m */,
+			);
+			path = HallViewController;
+			sourceTree = "<group>";
+		};
 		00A06B0723741AA700E17B70 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +279,7 @@
 		00A06B4F237422A800E17B70 /* contoroller */ = {
 			isa = PBXGroup;
 			children = (
+				0073194123796230000513B9 /* HallViewController */,
 				00A06B5123751DD100E17B70 /* LoginController.h */,
 				00A06B5223751DD100E17B70 /* LoginController.m */,
 			);
@@ -266,6 +292,8 @@
 				00A06B652375985E00E17B70 /* selfView */,
 				00A06B5423753C7800E17B70 /* LoginView.h */,
 				00A06B5523753C7800E17B70 /* LoginView.m */,
+				0073193E23795026000513B9 /* HallView.h */,
+				0073193F23795026000513B9 /* HallView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -508,10 +536,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A06B2323741AA900E17B70 /* main.m in Sources */,
+				0073194023795026000513B9 /* HallView.m in Sources */,
 				0073193A2375A0D3000513B9 /* UserObject.m in Sources */,
 				00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */,
+				0073193D23794F89000513B9 /* HallViewController.m in Sources */,
 				00A06B5623753C7800E17B70 /* LoginView.m in Sources */,
 				00A06B682375987F00E17B70 /* LoginTipsLabel.m in Sources */,
+				0073194423796480000513B9 /* NoteViewController.m in Sources */,
+				0073194723796C74000513B9 /* PersonalViewController.m in Sources */,
 				00A06B5323751DD100E17B70 /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

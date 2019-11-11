@@ -7,11 +7,13 @@
 //
 
 #import "LoginController.h"
-
+#import "HallViewController.h"
+#import "PersonalViewController.h"
 #import "LoginView.h"
 
 
 #import <Masonry.h>
+#import <ReactiveObjC.h>
 
 @interface LoginController ()
 
@@ -30,9 +32,34 @@
     
     [self.loginView.btnOfSignin addTarget:self action:@selector(signinAction:) forControlEvents:UIControlEventTouchUpInside];
     
+    RACSignal *nameSignal = [self.loginView.nameView rac_signalForControlEvents:UIControlEventEditingChanged];
+    RACSignal *passworkSignal = [self.loginView.passwordView rac_signalForControlEvents:UIControlEventEditingChanged];
+
+    
+    RACSignal *canSigninSignal = [nameSignal zipWith:passworkSignal];
+    
+    
+    [canSigninSignal subscribeNext:^(id  _Nullable x) {
+
+        [self.loginView.btnOfSignin setEnabled:YES];
+    }];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]init];
+    [tapRecognizer.rac_gestureSignal subscribeNext:^(__kindof UIGestureRecognizer * _Nullable x) {
+        [self.loginView resignFoucs];
+    }];
+    [self.view addGestureRecognizer:tapRecognizer];
 }
 
 - (void)signinAction:(id)sender {
+    HallViewController *controller = [[HallViewController alloc]init];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
+    
+    PersonalViewController *personalController = [[PersonalViewController alloc]init];
+    
+    UITabBarController *tabbarController = [[UITabBarController alloc]init];
+    tabbarController.viewControllers = @[navigationController, personalController];
+    [self presentViewController:tabbarController animated:YES completion:nil];
     
 }
 
