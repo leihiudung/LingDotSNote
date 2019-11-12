@@ -14,3 +14,9 @@ LV_password_placeholder_view = "请输入你的密令";
 
 LV_btn_sign_up = "注册"; // register
 LV_btn_sing_in = "登入"; // signin
+
+// HallViewController
+HVC_tabbar_title = "大厅";
+
+// PersonalViewController
+PVC_tabbar_title = "我";

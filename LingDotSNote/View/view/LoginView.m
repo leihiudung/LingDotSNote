@@ -7,6 +7,7 @@
 //
 
 #import "LoginView.h"
+#import "DLingColor.h"
 #import <Masonry.h>
 
 @interface LoginView()
@@ -16,13 +17,6 @@
 
 @implementation LoginView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -31,14 +25,7 @@
     }
     return self;
 }
-//- (instancetype)init
-//{
-//    self = [super init];
-//    if (self) {
-//        [self initView];
-//    }
-//    return self;
-//}
+
 
 - (void)initView {
     self.nameTipsView = [[LoginTipsLabel alloc]init];
@@ -46,6 +33,10 @@
     
     self.nameView = [[UITextField alloc]init];
     self.passwordView = [[UITextField alloc]init];
+    
+    [self.passwordView setSecureTextEntry:YES];
+    [self.passwordView setClearButtonMode:UITextFieldViewModeWhileEditing]; // 右侧输入内容时是否一次性删除
+//    [self.passwordView setClearsOnBeginEditing:YES]; // 获取焦点就删除原文内容
     
     [self addSubview:self.nameTipsView];
     [self addSubview:self.passwordTipsView];
@@ -60,7 +51,6 @@
     
     [self addSubview:self.signupBtn];
     [self addSubview:self.signinBtn];
-    [self.signinBtn setEnabled:NO];
     
     [self initConstraint];
     [self initContent];
@@ -126,8 +116,10 @@
     [self.signinBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     
     [self.signupBtn setBackgroundColor:[UIColor redColor]];
-    [self.signinBtn setBackgroundColor:[UIColor colorWithRed:123/255.0 green:104/255.0 blue:238/255.0 alpha:1]];
-//    [self.signinBtn ];
+    [self.signinBtn setBackgroundColor:[UIColor grayColor]];
+    
+//    [self.signinBtn setBackgroundImage:[DLingColor imageFromColor:[UIColor grayColor]] forState:UIControlStateNormal];
+//    [self.signinBtn setEnabled:NO];
     
     CALayer *signupLayer = self.signupBtn.layer;
     signupLayer.cornerRadius = 16;
@@ -161,6 +153,7 @@
 - (void)resignFoucs {
     [self.nameView resignFirstResponder];
     [self.passwordView resignFirstResponder];
+    
 }
 
 @end

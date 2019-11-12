@@ -12,6 +12,12 @@
 		0073194023795026000513B9 /* HallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073193F23795026000513B9 /* HallView.m */; };
 		0073194423796480000513B9 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073194323796480000513B9 /* NoteViewController.m */; };
 		0073194723796C74000513B9 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073194623796C74000513B9 /* PersonalViewController.m */; };
+		0073194A237A4EAE000513B9 /* DLingColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731949237A4EAE000513B9 /* DLingColor.m */; };
+		0073194E237A67EB000513B9 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073194D237A67EB000513B9 /* FoodViewController.m */; };
+		00731951237A6813000513B9 /* MemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731950237A6813000513B9 /* MemoViewController.m */; };
+		00731958237A9428000513B9 /* NotesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731957237A9428000513B9 /* NotesTableView.m */; };
+		0073195D237A9EE6000513B9 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073195C237A9EE6000513B9 /* AddNoteViewController.m */; };
+		00731962237A9F69000513B9 /* AddNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731961237A9F69000513B9 /* AddNoteView.m */; };
 		00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B1423741AA700E17B70 /* AppDelegate.m */; };
 		00A06B1B23741AA700E17B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1923741AA700E17B70 /* Main.storyboard */; };
 		00A06B1D23741AA900E17B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1C23741AA900E17B70 /* Assets.xcassets */; };
@@ -56,6 +62,18 @@
 		0073194323796480000513B9 /* NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		0073194523796C74000513B9 /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
 		0073194623796C74000513B9 /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		00731948237A4EAE000513B9 /* DLingColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLingColor.h; sourceTree = "<group>"; };
+		00731949237A4EAE000513B9 /* DLingColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLingColor.m; sourceTree = "<group>"; };
+		0073194C237A67EB000513B9 /* FoodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
+		0073194D237A67EB000513B9 /* FoodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
+		0073194F237A6813000513B9 /* MemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoViewController.h; sourceTree = "<group>"; };
+		00731950237A6813000513B9 /* MemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoViewController.m; sourceTree = "<group>"; };
+		00731954237A92EC000513B9 /* NotesTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesTableView.h; sourceTree = "<group>"; };
+		00731957237A9428000513B9 /* NotesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableView.m; sourceTree = "<group>"; };
+		00731959237A9EBE000513B9 /* AddNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		0073195C237A9EE6000513B9 /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		0073195E237A9F2E000513B9 /* AddNoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNoteView.h; sourceTree = "<group>"; };
+		00731961237A9F69000513B9 /* AddNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteView.m; sourceTree = "<group>"; };
 		00A06B1023741AA700E17B70 /* LingDotSNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingDotSNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A06B1323741AA700E17B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00A06B1423741AA700E17B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,14 +143,49 @@
 		0073194123796230000513B9 /* HallViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0073194B237A6746000513B9 /* FunctionControllers */,
 				0073193B23794F89000513B9 /* HallViewController.h */,
 				0073193C23794F89000513B9 /* HallViewController.m */,
-				0073194223796480000513B9 /* NoteViewController.h */,
-				0073194323796480000513B9 /* NoteViewController.m */,
 				0073194523796C74000513B9 /* PersonalViewController.h */,
 				0073194623796C74000513B9 /* PersonalViewController.m */,
 			);
 			path = HallViewController;
+			sourceTree = "<group>";
+		};
+		0073194B237A6746000513B9 /* FunctionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0073194223796480000513B9 /* NoteViewController.h */,
+				0073194323796480000513B9 /* NoteViewController.m */,
+				00731959237A9EBE000513B9 /* AddNoteViewController.h */,
+				0073195C237A9EE6000513B9 /* AddNoteViewController.m */,
+				0073194C237A67EB000513B9 /* FoodViewController.h */,
+				0073194D237A67EB000513B9 /* FoodViewController.m */,
+				0073194F237A6813000513B9 /* MemoViewController.h */,
+				00731950237A6813000513B9 /* MemoViewController.m */,
+			);
+			path = FunctionControllers;
+			sourceTree = "<group>";
+		};
+		00731952237A892A000513B9 /* HallView */ = {
+			isa = PBXGroup;
+			children = (
+				00731953237A8B23000513B9 /* Functions */,
+				0073193E23795026000513B9 /* HallView.h */,
+				0073193F23795026000513B9 /* HallView.m */,
+			);
+			path = HallView;
+			sourceTree = "<group>";
+		};
+		00731953237A8B23000513B9 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				00731954237A92EC000513B9 /* NotesTableView.h */,
+				00731957237A9428000513B9 /* NotesTableView.m */,
+				0073195E237A9F2E000513B9 /* AddNoteView.h */,
+				00731961237A9F69000513B9 /* AddNoteView.m */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 		00A06B0723741AA700E17B70 = {
@@ -202,6 +255,7 @@
 		00A06B452374215400E17B70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00A06B652375985E00E17B70 /* selfView */,
 				00A06B50237422C300E17B70 /* view */,
 				00A06B4F237422A800E17B70 /* contoroller */,
 			);
@@ -227,6 +281,8 @@
 		00A06B482374217A00E17B70 /* ToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				00731948237A4EAE000513B9 /* DLingColor.h */,
+				00731949237A4EAE000513B9 /* DLingColor.m */,
 			);
 			path = ToolBox;
 			sourceTree = "<group>";
@@ -289,11 +345,9 @@
 		00A06B50237422C300E17B70 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				00A06B652375985E00E17B70 /* selfView */,
+				00731952237A892A000513B9 /* HallView */,
 				00A06B5423753C7800E17B70 /* LoginView.h */,
 				00A06B5523753C7800E17B70 /* LoginView.m */,
-				0073193E23795026000513B9 /* HallView.h */,
-				0073193F23795026000513B9 /* HallView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -537,10 +591,16 @@
 			files = (
 				00A06B2323741AA900E17B70 /* main.m in Sources */,
 				0073194023795026000513B9 /* HallView.m in Sources */,
+				00731962237A9F69000513B9 /* AddNoteView.m in Sources */,
 				0073193A2375A0D3000513B9 /* UserObject.m in Sources */,
 				00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */,
+				00731951237A6813000513B9 /* MemoViewController.m in Sources */,
+				0073194A237A4EAE000513B9 /* DLingColor.m in Sources */,
 				0073193D23794F89000513B9 /* HallViewController.m in Sources */,
+				0073194E237A67EB000513B9 /* FoodViewController.m in Sources */,
 				00A06B5623753C7800E17B70 /* LoginView.m in Sources */,
+				0073195D237A9EE6000513B9 /* AddNoteViewController.m in Sources */,
+				00731958237A9428000513B9 /* NotesTableView.m in Sources */,
 				00A06B682375987F00E17B70 /* LoginTipsLabel.m in Sources */,
 				0073194423796480000513B9 /* NoteViewController.m in Sources */,
 				0073194723796C74000513B9 /* PersonalViewController.m in Sources */,

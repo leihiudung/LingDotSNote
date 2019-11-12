@@ -1,23 +1,22 @@
 //
-//  PersonalViewController.m
+//  FoodViewController.m
 //  LingDotSNote
 //
-//  Created by Tom-Li on 2019/11/11.
+//  Created by Tom-Li on 2019/11/12.
 //  Copyright © 2019 Dong&Ling. All rights reserved.
 //
 
-#import "PersonalViewController.h"
+#import "FoodViewController.h"
 
-@interface PersonalViewController ()
+@interface FoodViewController ()
 
 @end
 
-@implementation PersonalViewController
+@implementation FoodViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 /*

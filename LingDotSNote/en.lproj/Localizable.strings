@@ -15,3 +15,8 @@ LV_password_placeholder_view = "Enter your password";
 LV_btn_sign_up = "SIGN UP";// register
 LV_btn_sing_in = "SIGN IN";// signin
 
+// HallViewController
+HVC_tabbar_title = "Hall";
+
+// PersonalViewController
+PVC_tabbar_title = "Me";

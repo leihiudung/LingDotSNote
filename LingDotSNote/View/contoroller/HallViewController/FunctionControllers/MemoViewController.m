@@ -1,23 +1,22 @@
 //
-//  PersonalViewController.m
+//  MemoViewController.m
 //  LingDotSNote
 //
-//  Created by Tom-Li on 2019/11/11.
+//  Created by Tom-Li on 2019/11/12.
 //  Copyright © 2019 Dong&Ling. All rights reserved.
 //
 
-#import "PersonalViewController.h"
+#import "MemoViewController.h"
 
-@interface PersonalViewController ()
+@interface MemoViewController ()
 
 @end
 
-@implementation PersonalViewController
+@implementation MemoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 /*

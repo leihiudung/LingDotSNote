@@ -40,7 +40,7 @@
     
     
     [canSigninSignal subscribeNext:^(id  _Nullable x) {
-
+        [self.loginView.btnOfSignin setBackgroundColor:[UIColor colorWithRed:123/255.0 green:104/255.0 blue:238/255.0 alpha:1]];
         [self.loginView.btnOfSignin setEnabled:YES];
     }];
     
@@ -54,11 +54,13 @@
 - (void)signinAction:(id)sender {
     HallViewController *controller = [[HallViewController alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
-    
+    navigationController.title = NSLocalizedString(@"HVC_tabbar_title", @"");
     PersonalViewController *personalController = [[PersonalViewController alloc]init];
+    personalController.tabBarItem.title = NSLocalizedString(@"PVC_tabbar_title", @"");
     
     UITabBarController *tabbarController = [[UITabBarController alloc]init];
     tabbarController.viewControllers = @[navigationController, personalController];
+//    tabbarController
     [self presentViewController:tabbarController animated:YES completion:nil];
     
 }
