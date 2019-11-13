@@ -28,8 +28,8 @@
 
 
 - (void)initView {
-    self.nameTipsView = [[LoginTipsLabel alloc]init];
-    self.passwordTipsView = [[UILabel alloc]init];
+    self.nameTipsView = [[LoginTipsLabel alloc]initWithFrame:CGRectZero inset:UIEdgeInsetsMake(0, 0, 0, 8)];
+    self.passwordTipsView = [[LoginTipsLabel alloc]initWithFrame:CGRectZero inset:UIEdgeInsetsMake(0, 0, 0, 8)];
     
     self.nameView = [[UITextField alloc]init];
     self.passwordView = [[UITextField alloc]init];
@@ -129,9 +129,16 @@
     signinBtn.cornerRadius = 16;
     signinBtn.masksToBounds = YES;
     
-    [self.nameView setValue:@10 forKey:@"paddingLeft"];
-    [self.passwordView setValue:@10 forKey:@"paddingLeft"];
     
+    // uitextfield内边距
+    self.nameView.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 8, 0)];
+    self.nameView.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.passwordView.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 8, 0)];
+    self.passwordView.leftViewMode = UITextFieldViewModeAlways;
+//    [self.nameView setValue:@10 forKey:@"paddingLeft"]; // 缺陷是编辑时的光标和输入位置不对应
+//    [self.passwordView setValue:@10 forKey:@"paddingLeft"];
+        
     [self.nameView setBorderStyle:UITextBorderStyleRoundedRect];
     [self.passwordView setBorderStyle:UITextBorderStyleRoundedRect];
     

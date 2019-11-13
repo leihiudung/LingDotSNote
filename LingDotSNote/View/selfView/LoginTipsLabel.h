@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginTipsLabel : UILabel
-
+- (instancetype)initWithFrame:(CGRect)frame inset:(UIEdgeInsets)edgeInsets;
 @end
 
 NS_ASSUME_NONNULL_END

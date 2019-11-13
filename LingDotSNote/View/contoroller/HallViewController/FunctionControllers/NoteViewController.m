@@ -8,6 +8,7 @@
 
 #import "NoteViewController.h"
 #import "NotesTableView.h"
+#import "AddNoteViewController.h"
 
 @interface NoteViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NotesTableView *tableView;
@@ -57,7 +58,8 @@
  */
 - (void)addNote:(id)sender {
     // 跳到写日记controller
-    
+    AddNoteViewController *addController = [[AddNoteViewController alloc]init];
+    [self.navigationController pushViewController:addController animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
