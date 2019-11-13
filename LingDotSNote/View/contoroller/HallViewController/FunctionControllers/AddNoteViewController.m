@@ -11,7 +11,9 @@
 
 #import <ReactiveObjC.h>
 
-@interface AddNoteViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddNoteViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    BOOL _keyboardStatus;
+}
 @property (nonatomic, strong) AddNoteView *addNoteView;
 
 @property (nonatomic, strong) UIImagePickerController *pickerController;
@@ -28,6 +30,7 @@
     _addNoteView = [[AddNoteView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:_addNoteView];
     
+    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]init];
     [tapGesture.rac_gestureSignal subscribeNext:^(__kindof UIGestureRecognizer * _Nullable x) {
         [self pickImageFromAlbum:x];
@@ -42,9 +45,32 @@
     self.pickerController = [[UIImagePickerController alloc]init];
     self.pickerController.delegate = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardStatsShowNotification:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardStatsHiddenNotification:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)editNoteDone:(id)sender {
+    [self.addNoteView resignFocus];
+    // 当textfield有文字时,收起键盘,改变rightbarbutton
+    if (_keyboardStatus) {
+        if ([self.addNoteView getContentView].text.length > 0) {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发布吧" style:UIBarButtonItemStyleDone target:self action:@selector(commitAction:)];
+        } else {
+            // 当textfield没有z文字时,则不改变
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(editNoteDone:)];
+            
+        }
+        
+    } else {
+        
+    }
+    
+    
+    
+}
+
+- (void)commitAction:(id)sender {
     
 }
 
@@ -66,8 +92,16 @@
     
     [self.addNoteView insertNewImage:originalImage];
     
-    
 }
 
+- (void)keyboardStatsShowNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    _keyboardStatus = YES;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(editNoteDone:)];
+}
 
+- (void)keyboardStatsHiddenNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    _keyboardStatus = NO;
+}
 @end

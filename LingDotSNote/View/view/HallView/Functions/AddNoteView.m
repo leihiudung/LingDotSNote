@@ -7,7 +7,7 @@
 //
 
 #import "AddNoteView.h"
-
+#import <ReactiveObjC.h>
 #import <Masonry.h>
 
 @interface AddNoteView()
@@ -86,7 +86,15 @@
 }
 
 -(void)initEvent {
-    
+    [[_contentView.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        return value.length > 0;
+    }] subscribeNext:^(NSString * _Nullable x) {
+        
+    }];
+}
+
+- (UITextView *)getContentView {
+    return self.contentView;
 }
 
 - (UIImageView *)getAddImageView {

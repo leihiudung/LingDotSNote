@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)resignFocus;
 - (UIImageView *)getAddImageView;
+- (UITextView *)getContentView;
 - (void)insertNewImage:(UIImage *)image;
 @end
 
