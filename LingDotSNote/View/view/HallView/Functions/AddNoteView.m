@@ -11,7 +11,7 @@
 #import <Masonry.h>
 
 @interface AddNoteView()
-@property (nonatomic, strong) UITextView *contentView;
+//@property (nonatomic, strong) UITextView *contentView;
 
 @property (nonatomic, strong) UIView *imageContainerView;
 
@@ -93,12 +93,16 @@
     }];
 }
 
-- (UITextView *)getContentView {
-    return self.contentView;
-}
+//- (UITextView *)getContentView {
+//    return self.contentView;
+//}
 
 - (UIImageView *)getAddImageView {
     return self.addImageView;
+}
+
+- (NSArray<UIImageView *> *)getImages {
+    return self.addImageViewArray.copy;
 }
 
 - (void)insertNewImage:(UIImage *)image {
@@ -123,7 +127,7 @@
             make.left.mas_equalTo(self.imageContainerView.mas_left).mas_offset(i % ColumnCount * (containerWidth * 0.3) + self.frame.size.width * 0.025 * (i % ColumnCount + 1));
             make.top.mas_equalTo(self.imageContainerView.mas_top).mas_offset(12 + (i / ColumnCount) * (containerWidth * 0.3) + 12 * (i / ColumnCount));
         }];
-   
+        
     }
     
     UIImageView *tempImageView = _addImageViewArray[0];

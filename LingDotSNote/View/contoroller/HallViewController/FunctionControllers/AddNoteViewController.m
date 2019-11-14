@@ -8,8 +8,10 @@
 
 #import "AddNoteViewController.h"
 #import "AddNoteView.h"
+#import "AddnoteViewModel.h"
 
 #import <ReactiveObjC.h>
+
 
 @interface AddNoteViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     BOOL _keyboardStatus;
@@ -17,6 +19,8 @@
 @property (nonatomic, strong) AddNoteView *addNoteView;
 
 @property (nonatomic, strong) UIImagePickerController *pickerController;
+
+@property (nonatomic, strong) AddNoteViewModel *viewModel;
 @end
 
 @implementation AddNoteViewController
@@ -48,13 +52,25 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardStatsShowNotification:) name:UIKeyboardDidShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardStatsHiddenNotification:) name:UIKeyboardDidHideNotification object:nil];
+    
+    self.viewModel = [[AddNoteViewModel alloc]init];
+    RAC(self.viewModel, message) = self.addNoteView.contentView.rac_textSignal;
+//    RAC(self.viewModel, message) = [RACObserve(self.addNoteView.contentView, text) merge:self.addNoteView.contentView.rac_textSignal];
+//    RAC(self.viewModel, message) = RACObserve(self.addNoteView.contentView, text);
+    RAC(self.viewModel, imageArray) = RACObserve(self.addNoteView, getImages);
+    
 }
 
+/**
+ rightbarbutton为"完成"时的点击事件
+
+ @param sender
+ */
 - (void)editNoteDone:(id)sender {
     [self.addNoteView resignFocus];
     // 当textfield有文字时,收起键盘,改变rightbarbutton
     if (_keyboardStatus) {
-        if ([self.addNoteView getContentView].text.length > 0) {
+        if ([self.addNoteView contentView].text.length > 0) {
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发布吧" style:UIBarButtonItemStyleDone target:self action:@selector(commitAction:)];
         } else {
             // 当textfield没有z文字时,则不改变
@@ -70,8 +86,17 @@
     
 }
 
+/**
+ rightbarbutton为"发布吧"时的点击事件
+
+ @param sender
+ */
 - (void)commitAction:(id)sender {
-    
+    NSString *contentStr = [self.addNoteView contentView].text;
+    NSLog(@"done");
+    [self.viewModel addNoteInDatabase:^(NSString * _Nonnull success) {
+        
+    }];
 }
 
 - (void)pickImageFromAlbum:(UIGestureRecognizer *)recognizer {

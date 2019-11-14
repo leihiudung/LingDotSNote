@@ -11,11 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AddNoteView : UIView
-
+@property (nonatomic, strong) UITextView *contentView;
 - (void)resignFocus;
 - (UIImageView *)getAddImageView;
-- (UITextView *)getContentView;
+//- (UITextView *)getContentView;
 - (void)insertNewImage:(UIImage *)image;
+- (NSArray<UIImageView *> *)getImages;
 @end
 
 NS_ASSUME_NONNULL_END
