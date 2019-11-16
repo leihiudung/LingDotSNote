@@ -7,8 +7,8 @@
 //
 
 #import "AddNoteView.h"
-#import <ReactiveObjC.h>
-#import <Masonry.h>
+#import "ReactiveObjC.h"
+#import "Masonry.h"
 
 @interface AddNoteView()
 //@property (nonatomic, strong) UITextView *contentView;
@@ -16,8 +16,6 @@
 @property (nonatomic, strong) UIView *imageContainerView;
 
 @property (nonatomic, strong) UIImageView *addImageView;
-
-@property (nonatomic, strong) NSMutableArray<UIImageView *> *addImageViewArray;
 
 @end
 
@@ -105,12 +103,16 @@
     return self.addImageViewArray.copy;
 }
 
+- (NSMutableArray<UIImageView *> *)addImageViewArray {
+    return _addImageViewArray.copy;
+}
+
 - (void)insertNewImage:(UIImage *)image {
     UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
     [_imageContainerView addSubview:imageView];
     
-    [_addImageViewArray insertObject:imageView atIndex:0];
-    
+//    [_addImageViewArray insertObject:imageView atIndex:0];
+    [[self mutableArrayValueForKey:@"addImageViewArray"] insertObject:imageView atIndex:0];
     [self updateImageConstraints];
 }
 

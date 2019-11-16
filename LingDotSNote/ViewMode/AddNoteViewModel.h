@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveObjC.h>
+#import "ReactiveObjC.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AddNoteViewModel : NSObject
 
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSMutableArray<UIImage *> *imageArray;
-
+@property (nonatomic, strong) NSEnumerator<UIImage *> *imageEnumerator;
 - (void)commitNote:(NSString *)contentStr;
 - (void)addNoteInDatabase:(void (^)(NSString *))successBlock;
 @end

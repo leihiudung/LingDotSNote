@@ -10,7 +10,7 @@
 #import "AddNoteView.h"
 #import "AddnoteViewModel.h"
 
-#import <ReactiveObjC.h>
+#import "ReactiveObjC.h"
 
 
 @interface AddNoteViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
@@ -21,6 +21,10 @@
 @property (nonatomic, strong) UIImagePickerController *pickerController;
 
 @property (nonatomic, strong) AddNoteViewModel *viewModel;
+
+@property (nonatomic, strong) RACSignal *zipSignal;
+
+@property (nonatomic, assign) BOOL canCommit;
 @end
 
 @implementation AddNoteViewController
@@ -56,9 +60,19 @@
     self.viewModel = [[AddNoteViewModel alloc]init];
     RAC(self.viewModel, message) = self.addNoteView.contentView.rac_textSignal;
 //    RAC(self.viewModel, message) = [RACObserve(self.addNoteView.contentView, text) merge:self.addNoteView.contentView.rac_textSignal];
-//    RAC(self.viewModel, message) = RACObserve(self.addNoteView.contentView, text);
-    RAC(self.viewModel, imageArray) = RACObserve(self.addNoteView, getImages);
     
+    RAC(self.viewModel, imageArray)  = [RACObserve(self.addNoteView, addImageViewArray) merge:self.addNoteView.addImageViewArray.rac_sequence.signal];
+    
+    self.zipSignal = [self.addNoteView.contentView.rac_textSignal zipWith:[RACObserve(self.addNoteView, addImageViewArray) merge:self.addNoteView.addImageViewArray.rac_sequence.signal] ];
+    [[self.zipSignal map:^id _Nullable(id  _Nullable value) {
+        
+        return @(self.addNoteView.contentView.text.length > 0 || self.addNoteView.addImageViewArray.count > 1);
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"开始编写");
+        self.canCommit = x;
+    }];
+    
+    NSLog(@"done");
 }
 
 /**
@@ -78,8 +92,6 @@
             
         }
         
-    } else {
-        
     }
     
     
@@ -92,8 +104,14 @@
  @param sender
  */
 - (void)commitAction:(id)sender {
-    NSString *contentStr = [self.addNoteView contentView].text;
-    NSLog(@"done");
+
+    if (self.canCommit) {
+        // 写入数据到本地
+        
+        // 提交网络
+        
+    }
+
     [self.viewModel addNoteInDatabase:^(NSString * _Nonnull success) {
         
     }];
@@ -113,9 +131,9 @@
 
     UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    [self.pickerController dismissViewControllerAnimated:YES completion:nil];
-    
     [self.addNoteView insertNewImage:originalImage];
+    [self.pickerController dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 

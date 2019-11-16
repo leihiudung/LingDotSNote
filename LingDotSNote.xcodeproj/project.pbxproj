@@ -19,6 +19,7 @@
 		0073195D237A9EE6000513B9 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073195C237A9EE6000513B9 /* AddNoteViewController.m */; };
 		00731962237A9F69000513B9 /* AddNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731961237A9F69000513B9 /* AddNoteView.m */; };
 		00731965237CF097000513B9 /* AddNoteViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731964237CF097000513B9 /* AddNoteViewModel.m */; };
+		007CF8F2237EAE2C00BF14D2 /* DatabaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 007CF8F1237EAE2C00BF14D2 /* DatabaseTool.m */; };
 		00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B1423741AA700E17B70 /* AppDelegate.m */; };
 		00A06B1B23741AA700E17B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1923741AA700E17B70 /* Main.storyboard */; };
 		00A06B1D23741AA900E17B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1C23741AA900E17B70 /* Assets.xcassets */; };
@@ -30,9 +31,9 @@
 		00A06B5623753C7800E17B70 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B5523753C7800E17B70 /* LoginView.m */; };
 		00A06B5F237544F900E17B70 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B61237544F900E17B70 /* Localizable.strings */; };
 		00A06B682375987F00E17B70 /* LoginTipsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B672375987F00E17B70 /* LoginTipsLabel.m */; };
-		AF479506CD2576544AEB99AE /* libPods-LingDotSNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C53193816C0DEACFD3BC68EE /* libPods-LingDotSNoteTests.a */; };
-		CF852D8C23BBF9E93CF8C902 /* libPods-LingDotSNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B11DB69357D68D1F239DD /* libPods-LingDotSNoteUITests.a */; };
-		E3FCBD44DA6E18B96AE0F364 /* libPods-LingDotSNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA7B7A9077AA3AC6083F17B /* libPods-LingDotSNote.a */; };
+		35601923416E16E71BAC9881 /* Pods_LingDotSNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5C44A7EE1860F9435CDCF0 /* Pods_LingDotSNoteTests.framework */; };
+		8CC0E3A8F53BFCBAD29A1FC9 /* Pods_LingDotSNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7492F6A0CB937A88B40BFB9 /* Pods_LingDotSNote.framework */; };
+		CD917EC7D62FCAB6A7056126 /* Pods_LingDotSNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301005C7D401457A2C92713F /* Pods_LingDotSNoteUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		00731961237A9F69000513B9 /* AddNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteView.m; sourceTree = "<group>"; };
 		00731963237CF097000513B9 /* AddNoteViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNoteViewModel.h; sourceTree = "<group>"; };
 		00731964237CF097000513B9 /* AddNoteViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewModel.m; sourceTree = "<group>"; };
+		007CF8EE237EAC2200BF14D2 /* DatabaseTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseTool.h; sourceTree = "<group>"; };
+		007CF8F1237EAE2C00BF14D2 /* DatabaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseTool.m; sourceTree = "<group>"; };
 		00A06B1023741AA700E17B70 /* LingDotSNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingDotSNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A06B1323741AA700E17B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00A06B1423741AA700E17B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -104,15 +107,15 @@
 		00A06B63237544FF00E17B70 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		00A06B662375987F00E17B70 /* LoginTipsLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTipsLabel.h; sourceTree = "<group>"; };
 		00A06B672375987F00E17B70 /* LoginTipsLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTipsLabel.m; sourceTree = "<group>"; };
+		301005C7D401457A2C92713F /* Pods_LingDotSNoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingDotSNoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46883B0BCBCA0A3E59276BA0 /* Pods-LingDotSNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNoteTests/Pods-LingDotSNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B5C44A7EE1860F9435CDCF0 /* Pods_LingDotSNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingDotSNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8CB0EFFB00E06B31897B04 /* Pods-LingDotSNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNote/Pods-LingDotSNote.debug.xcconfig"; sourceTree = "<group>"; };
-		9AA7B7A9077AA3AC6083F17B /* libPods-LingDotSNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LingDotSNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9256B7B01AA5943B3790271 /* Pods-LingDotSNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNoteTests/Pods-LingDotSNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B680EA18C1900D2E25186A83 /* Pods-LingDotSNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNoteUITests/Pods-LingDotSNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C53193816C0DEACFD3BC68EE /* libPods-LingDotSNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LingDotSNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7492F6A0CB937A88B40BFB9 /* Pods_LingDotSNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingDotSNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCCD1EC683F0DE15F21958C /* Pods-LingDotSNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNoteUITests/Pods-LingDotSNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E63CF64FE778D4C110872412 /* Pods-LingDotSNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingDotSNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingDotSNote/Pods-LingDotSNote.release.xcconfig"; sourceTree = "<group>"; };
-		FE8B11DB69357D68D1F239DD /* libPods-LingDotSNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LingDotSNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3FCBD44DA6E18B96AE0F364 /* libPods-LingDotSNote.a in Frameworks */,
+				8CC0E3A8F53BFCBAD29A1FC9 /* Pods_LingDotSNote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF479506CD2576544AEB99AE /* libPods-LingDotSNoteTests.a in Frameworks */,
+				35601923416E16E71BAC9881 /* Pods_LingDotSNoteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF852D8C23BBF9E93CF8C902 /* libPods-LingDotSNoteUITests.a in Frameworks */,
+				CD917EC7D62FCAB6A7056126 /* Pods_LingDotSNoteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +194,15 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
+		007CF8A2237E7F0A00BF14D2 /* DatabaseToolBox */ = {
+			isa = PBXGroup;
+			children = (
+				007CF8EE237EAC2200BF14D2 /* DatabaseTool.h */,
+				007CF8F1237EAE2C00BF14D2 /* DatabaseTool.m */,
+			);
+			path = DatabaseToolBox;
+			sourceTree = "<group>";
+		};
 		00A06B0723741AA700E17B70 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 		00A06B1223741AA700E17B70 /* LingDotSNote */ = {
 			isa = PBXGroup;
 			children = (
+				007CF8A2237E7F0A00BF14D2 /* DatabaseToolBox */,
 				00A06B4B2374221900E17B70 /* ThirdPartCode */,
 				00A06B4A237421C300E17B70 /* ExperienceSource */,
 				00A06B49237421AC00E17B70 /* NetToolBox */,
@@ -369,9 +382,9 @@
 		20DF8BAEB1121CC496E2E20D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AA7B7A9077AA3AC6083F17B /* libPods-LingDotSNote.a */,
-				C53193816C0DEACFD3BC68EE /* libPods-LingDotSNoteTests.a */,
-				FE8B11DB69357D68D1F239DD /* libPods-LingDotSNoteUITests.a */,
+				D7492F6A0CB937A88B40BFB9 /* Pods_LingDotSNote.framework */,
+				4B5C44A7EE1860F9435CDCF0 /* Pods_LingDotSNoteTests.framework */,
+				301005C7D401457A2C92713F /* Pods_LingDotSNoteUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -400,6 +413,7 @@
 				00A06B0C23741AA700E17B70 /* Sources */,
 				00A06B0D23741AA700E17B70 /* Frameworks */,
 				00A06B0E23741AA700E17B70 /* Resources */,
+				04C252DAA10D2723863030E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,6 +535,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04C252DAA10D2723863030E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LingDotSNote/Pods-LingDotSNote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LingDotSNote/Pods-LingDotSNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		09434E47CC7685AF79BD1CBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -600,6 +642,7 @@
 				0073193A2375A0D3000513B9 /* UserObject.m in Sources */,
 				00731965237CF097000513B9 /* AddNoteViewModel.m in Sources */,
 				00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */,
+				007CF8F2237EAE2C00BF14D2 /* DatabaseTool.m in Sources */,
 				00731951237A6813000513B9 /* MemoViewController.m in Sources */,
 				0073194A237A4EAE000513B9 /* DLingColor.m in Sources */,
 				0073193D23794F89000513B9 /* HallViewController.m in Sources */,
