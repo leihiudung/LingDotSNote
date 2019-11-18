@@ -107,9 +107,12 @@
     return _addImageViewArray.copy;
 }
 
-- (void)insertNewImage:(UIImage *)image {
+- (void)insertNewImage:(UIImage *)image andCallBack:(void (^)(UIImageView *))imageBack {
     UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    [imageView setUserInteractionEnabled:YES];
+    
     [_imageContainerView addSubview:imageView];
+    imageBack(imageView);
     
 //    [_addImageViewArray insertObject:imageView atIndex:0];
     [[self mutableArrayValueForKey:@"addImageViewArray"] insertObject:imageView atIndex:0];

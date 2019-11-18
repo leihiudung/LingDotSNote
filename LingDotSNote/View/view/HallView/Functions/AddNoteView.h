@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIImageView *)getAddImageView;
 
 //- (UITextView *)getContentView;
-- (void)insertNewImage:(UIImage *)image;
+- (void)insertNewImage:(UIImage *)image andCallBack:(void (^)(UIImageView *))imageBack;
 - (NSArray<UIImageView *> *)getImages;
 @end
 

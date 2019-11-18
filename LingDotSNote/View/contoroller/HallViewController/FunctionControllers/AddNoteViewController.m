@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) RACSignal *zipSignal;
 
+@property (nonatomic, strong) RACSignal *maxScreenSignal;
+
 @property (nonatomic, assign) BOOL canCommit;
 @end
 
@@ -94,8 +96,6 @@
         
     }
     
-    
-    
 }
 
 /**
@@ -131,9 +131,10 @@
 
     UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    [self.addNoteView insertNewImage:originalImage];
+    [self.addNoteView insertNewImage:originalImage andCallBack:^(UIImageView * _Nonnull imageView) {
+        [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageAction:)]];
+    }];
     [self.pickerController dismissViewControllerAnimated:YES completion:nil];
-
     
 }
 
@@ -146,5 +147,10 @@
 - (void)keyboardStatsHiddenNotification:(NSNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     _keyboardStatus = NO;
+}
+
+- (void)imageAction:(UIGestureRecognizer *)recognizer {
+    
+    
 }
 @end

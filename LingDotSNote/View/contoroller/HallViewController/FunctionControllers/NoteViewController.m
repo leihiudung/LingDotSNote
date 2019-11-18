@@ -10,6 +10,8 @@
 #import "NotesTableView.h"
 #import "AddNoteViewController.h"
 
+#import "DatabaseTool.h"
+
 @interface NoteViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NotesTableView *tableView;
 
@@ -39,7 +41,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellId"];
-    
+    DatabaseTool *databaseTool = [DatabaseTool share];
 }
 
 /**

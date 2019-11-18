@@ -7,6 +7,7 @@
 //
 
 #import "AddNoteViewModel.h"
+#import "DatabaseTool.h"
 
 typedef void (^addNote) (NSString *);
 @interface AddNoteViewModel()
@@ -35,7 +36,9 @@ typedef void (^addNote) (NSString *);
 }
 
 - (void)addNoteInDatabase:(void (^)(NSString *))successBlock {
-    
+    [[DatabaseTool share] insertNoteData:self.message andImage:self.imageArray andResultBlock:^(NSString * _Nonnull resultMsg) {
+        
+    }];
 }
 
 - (void)commitNote:(NSString *)contentStr {
