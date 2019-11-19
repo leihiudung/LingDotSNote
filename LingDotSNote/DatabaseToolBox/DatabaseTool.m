@@ -57,8 +57,8 @@ static NSString *EncryptiohKey = @"YouAndMe";
 
 - (void)createTable {
     [self.db open];
-    NSString *sql = @"create table t_note_image (id integer primary key autoincrement, image_name_0 text, image_name_1 text, image_name_2 text, image_name_3 text, image_name_4 text, image_name_5 text, image_name_6 text, image_name_7 text);"
-    "create table t_note (id integer primary key autoincrement, content text, date date, weather text, private_state integer, constraint note_image_id foreign key(id) references t_note_image);";
+    NSString *sql = @"create table t_note_image (id integer primary key autoincrement, image_name_0 text, image_name_1 text, image_name_2 text, image_name_3 text, image_name_4 text, image_name_5 text, image_name_6 text, image_name_7 text, create_time date, update_time date);"
+    "create table t_note (id integer primary key autoincrement, content text, date date, weather text, private_state integer, create_time date, update_time date, constraint note_image_id foreign key(id) references t_note_image);";
     
     self.success = [self.db executeStatements:sql];
     NSLog(@"done");
@@ -70,6 +70,7 @@ static NSString *EncryptiohKey = @"YouAndMe";
 
     NSString *filePath = [_dirPath stringByAppendingPathComponent:fileName];
     
+    NSMutableArray *imageNameArray = [NSMutableArray array];
     BOOL dirctoryCreateFlag = NO;
     // 插入图片
     if ([imageArray count] > 0) {
@@ -77,6 +78,8 @@ static NSString *EncryptiohKey = @"YouAndMe";
         dirctoryCreateFlag = [_fileManager createDirectoryAtPath:[NSString stringWithFormat:@"%@_img", self.dirPath] withIntermediateDirectories:NO attributes:nil error:&imgError];
         if (dirctoryCreateFlag) {
             for (UIImage *tempImage in imageArray) {
+                
+                [imageNameArray addObject:@(arc4random_uniform(100000))];
                 
                 BOOL imageFileCreateFlag = [_fileManager createFileAtPath:[NSString stringWithFormat:@"%@_img", self.dirPath] contents:UIImagePNGRepresentation(tempImage) attributes:nil];
                 if (!imageFileCreateFlag) {
@@ -102,11 +105,23 @@ static NSString *EncryptiohKey = @"YouAndMe";
     }
     // 待文本和图片都能存放成功后,再存到数据库中
     if ([imageArray count] > 0) {
+        NSMutableString *columnName = [NSMutableString string];
+        NSMutableString *columnValue = [NSMutableString string];
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"insert into t_note_image ("];
+        
         for (int i = 0; i < imageArray.count; i++) {
-            
+            [columnName appendFormat:@"image_name_%d, ", i];
+            [columnValue appendString:@"?,"];
         }
-//        [_db executeUpdate:@"INSERT INTO t_note_image (identifier, name, date, comment) VALUES (?, ?, ?, ?)", @(identifier), name, date, comment ?: [NSNull null]];
+        [sql appendString:columnName.copy];
+        [sql appendString:@" create_time) values ("];
+        [sql appendString:columnValue.copy];
+        [sql appendString:[NSString stringWithFormat:@", ?)"]];
+        
+        [_db executeUpdate:sql.copy withArgumentsInArray:imageNameArray];
     }
+    NSLog(@"done");
+    
 //    BOOL success = [_db executeUpdate:@"INSERT INTO authors (identifier, name, date, comment) VALUES (?, ?, ?, ?)", @(identifier), name, date, comment ?: [NSNull null]];
 
     

@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) UIImageView *addImageView;
 
+@property (nonatomic, strong) NSMutableArray *imageArray;
+
 @end
 
 @implementation AddNoteView
@@ -44,6 +46,12 @@
     _addImageViewArray = [NSMutableArray array];
     [_addImageViewArray addObject:_addImageView];
     
+    _imageArray = [NSMutableArray array];
+    [[RACObserve(self, addImageViewArray) map:^id _Nullable(id  _Nullable value) {
+        return @"";
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"done");
+    }];
 //    CALayer *contentLayer = _contentView.layer;
     _imageContainerView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:250/255.0 alpha:1];
     
