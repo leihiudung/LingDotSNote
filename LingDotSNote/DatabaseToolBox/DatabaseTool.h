@@ -19,7 +19,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param content 日记内容
  @param imageArray 图片
  */
-- (void)insertNoteData:(NSString *)content andImage:(nullable NSArray<UIImage *> *)imageArray andResultBlock:(void (^)(NSString *))resultBlock;
+- (void)insertNoteData:(NSString *)content andImage:(nullable NSArray<UIImage *> *)imageArray andResultBlock:(void (^)(BOOL, NSString *))resultBlock;
+
+/**
+ 读取日志数据库
+
+ @return 
+ */
+- (NSArray *)readNoteData;
 @end
 
 NS_ASSUME_NONNULL_END

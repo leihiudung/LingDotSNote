@@ -63,7 +63,7 @@
     RAC(self.viewModel, message) = self.addNoteView.contentView.rac_textSignal;
 //    RAC(self.viewModel, message) = [RACObserve(self.addNoteView.contentView, text) merge:self.addNoteView.contentView.rac_textSignal];
     
-    RAC(self.viewModel, imageArray)  = [RACObserve(self.addNoteView, addImageViewArray) merge:self.addNoteView.addImageViewArray.rac_sequence.signal];
+    RAC(self.viewModel, imageArray)  = [RACObserve(self.addNoteView, imageArray) merge:self.addNoteView.imageArray.rac_sequence.signal];
     
     self.zipSignal = [self.addNoteView.contentView.rac_textSignal zipWith:[RACObserve(self.addNoteView, addImageViewArray) merge:self.addNoteView.addImageViewArray.rac_sequence.signal] ];
     [[self.zipSignal map:^id _Nullable(id  _Nullable value) {
@@ -112,8 +112,9 @@
         
     }
 
-    [self.viewModel addNoteInDatabase:^(NSString * _Nonnull success) {
-        
+    __weak typeof(self)weakSelf = self;
+    [self.viewModel addNoteInDatabase:^(BOOL flag, NSString * _Nonnull success) {
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
 }
 

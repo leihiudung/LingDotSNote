@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UITextView *contentView;
 @property (nonatomic, strong) NSMutableArray<UIImageView *> *addImageViewArray;
-
+@property (nonatomic, strong) NSMutableArray *imageArray;
 - (void)resignFocus;
 - (UIImageView *)getAddImageView;
 

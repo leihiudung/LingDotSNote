@@ -35,9 +35,11 @@ typedef void (^addNote) (NSString *);
     }];
 }
 
-- (void)addNoteInDatabase:(void (^)(NSString *))successBlock {
-    [[DatabaseTool share] insertNoteData:self.message andImage:self.imageArray andResultBlock:^(NSString * _Nonnull resultMsg) {
-        
+- (void)addNoteInDatabase:(void (^)(BOOL, NSString *))successBlock {
+    [[DatabaseTool share] insertNoteData:self.message andImage:self.imageArray andResultBlock:^(BOOL flag, NSString * _Nonnull resultMsg) {
+//        if (flag) {
+            successBlock(flag, resultMsg);
+//        }
     }];
 }
 

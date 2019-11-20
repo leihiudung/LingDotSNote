@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) UIImageView *addImageView;
 
-@property (nonatomic, strong) NSMutableArray *imageArray;
+
 
 @end
 
@@ -47,10 +47,15 @@
     [_addImageViewArray addObject:_addImageView];
     
     _imageArray = [NSMutableArray array];
-    [[RACObserve(self, addImageViewArray) map:^id _Nullable(id  _Nullable value) {
-        return @"";
+    [[RACObserve(self, addImageViewArray) filter:^BOOL(NSArray *value) {
+        return value.count > 1;
     }] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"done");
+//        NSArray<UIImageView *> *imageViews = (NSArray *)x;
+        NSMutableArray<UIImage *> *tempImageArray = [NSMutableArray array];
+        for (UIImageView *tempImageView in (NSArray<UIImageView *> *)x) {
+            [tempImageArray addObject:tempImageView.image];
+        }
+        self.imageArray = tempImageArray.copy;
     }];
 //    CALayer *contentLayer = _contentView.layer;
     _imageContainerView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:250/255.0 alpha:1];

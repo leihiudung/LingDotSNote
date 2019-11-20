@@ -11,10 +11,13 @@
 #import "AddNoteViewController.h"
 
 #import "DatabaseTool.h"
+#import "NoteViewModel.h"
+
+#import "NoteModel.h"
 
 @interface NoteViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NotesTableView *tableView;
-
+@property (nonatomic, strong) NoteViewModel *noteViewModel;
 @property (nonatomic, strong) NSArray *noteArray;
 @end
 
@@ -42,6 +45,11 @@
     // Do any additional setup after loading the view.
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellId"];
     DatabaseTool *databaseTool = [DatabaseTool share];
+    self.noteViewModel = [[NoteViewModel alloc]init];
+    
+    [self.noteViewModel loadNoteFromDB:^(NSArray * _Nonnull noteModelArray) {
+        self.noteArray = noteModelArray;
+    }];
 }
 
 /**
@@ -76,7 +84,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = @"";
+    NoteModel *noteModel = self.noteArray[indexPath.row];
+    cell.textLabel.text = noteModel.contentStr;
     return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+    
 }
 @end

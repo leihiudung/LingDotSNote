@@ -22,6 +22,8 @@
 		007CF8F2237EAE2C00BF14D2 /* DatabaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 007CF8F1237EAE2C00BF14D2 /* DatabaseTool.m */; };
 		007CF8F623822CB500BF14D2 /* NotePicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007CF8F523822CB500BF14D2 /* NotePicController.m */; };
 		007CF90323828E7800BF14D2 /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 007CF90223828E7800BF14D2 /* NSData+Encryption.m */; };
+		007CF90723851CCF00BF14D2 /* NoteViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007CF90623851CCF00BF14D2 /* NoteViewModel.m */; };
+		007CF90C238523CB00BF14D2 /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007CF90B238523CB00BF14D2 /* NoteModel.m */; };
 		00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A06B1423741AA700E17B70 /* AppDelegate.m */; };
 		00A06B1B23741AA700E17B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1923741AA700E17B70 /* Main.storyboard */; };
 		00A06B1D23741AA900E17B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A06B1C23741AA900E17B70 /* Assets.xcassets */; };
@@ -86,6 +88,11 @@
 		007CF8F523822CB500BF14D2 /* NotePicController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotePicController.m; sourceTree = "<group>"; };
 		007CF8FF23828E5D00BF14D2 /* NSData+Encryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		007CF90223828E7800BF14D2 /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		007CF90523851CCF00BF14D2 /* NoteViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewModel.h; sourceTree = "<group>"; };
+		007CF90623851CCF00BF14D2 /* NoteViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewModel.m; sourceTree = "<group>"; };
+		007CF9082385238700BF14D2 /* NoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
+		007CF90B238523CB00BF14D2 /* NoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
+		007CF90E2385245600BF14D2 /* NoteEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteEnum.h; sourceTree = "<group>"; };
 		00A06B1023741AA700E17B70 /* LingDotSNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingDotSNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A06B1323741AA700E17B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00A06B1423741AA700E17B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -213,6 +220,14 @@
 			path = DatabaseToolBox;
 			sourceTree = "<group>";
 		};
+		007CF90D2385244400BF14D2 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				007CF90E2385245600BF14D2 /* NoteEnum.h */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		00A06B0723741AA700E17B70 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +255,7 @@
 		00A06B1223741AA700E17B70 /* LingDotSNote */ = {
 			isa = PBXGroup;
 			children = (
+				007CF90D2385244400BF14D2 /* Enum */,
 				007CF8A2237E7F0A00BF14D2 /* DatabaseToolBox */,
 				00A06B4B2374221900E17B70 /* ThirdPartCode */,
 				00A06B4A237421C300E17B70 /* ExperienceSource */,
@@ -293,6 +309,8 @@
 			children = (
 				00731963237CF097000513B9 /* AddNoteViewModel.h */,
 				00731964237CF097000513B9 /* AddNoteViewModel.m */,
+				007CF90523851CCF00BF14D2 /* NoteViewModel.h */,
+				007CF90623851CCF00BF14D2 /* NoteViewModel.m */,
 			);
 			path = ViewMode;
 			sourceTree = "<group>";
@@ -302,6 +320,8 @@
 			children = (
 				0073193623759F85000513B9 /* UserObject.h */,
 				007319392375A0D3000513B9 /* UserObject.m */,
+				007CF9082385238700BF14D2 /* NoteModel.h */,
+				007CF90B238523CB00BF14D2 /* NoteModel.m */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -653,11 +673,13 @@
 				007CF90323828E7800BF14D2 /* NSData+Encryption.m in Sources */,
 				00731965237CF097000513B9 /* AddNoteViewModel.m in Sources */,
 				00A06B1523741AA700E17B70 /* AppDelegate.m in Sources */,
+				007CF90723851CCF00BF14D2 /* NoteViewModel.m in Sources */,
 				007CF8F2237EAE2C00BF14D2 /* DatabaseTool.m in Sources */,
 				00731951237A6813000513B9 /* MemoViewController.m in Sources */,
 				0073194A237A4EAE000513B9 /* DLingColor.m in Sources */,
 				0073193D23794F89000513B9 /* HallViewController.m in Sources */,
 				0073194E237A67EB000513B9 /* FoodViewController.m in Sources */,
+				007CF90C238523CB00BF14D2 /* NoteModel.m in Sources */,
 				007CF8F623822CB500BF14D2 /* NotePicController.m in Sources */,
 				00A06B5623753C7800E17B70 /* LoginView.m in Sources */,
 				0073195D237A9EE6000513B9 /* AddNoteViewController.m in Sources */,

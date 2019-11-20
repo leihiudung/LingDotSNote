@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<UIImage *> *imageArray;
 @property (nonatomic, strong) NSEnumerator<UIImage *> *imageEnumerator;
 - (void)commitNote:(NSString *)contentStr;
-- (void)addNoteInDatabase:(void (^)(NSString *))successBlock;
+- (void)addNoteInDatabase:(void (^)(BOOL, NSString *))successBlock;
 @end
 
 NS_ASSUME_NONNULL_END
